@@ -28,6 +28,25 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		
+		'ycm'=>array(
+	        'username'=>'admin',
+	        'password'=>'admin',
+	        'registerModels'=>array(
+	            //'application.models.Blog', // one model
+	            'application.models.*', // all models in folder
+	        )
+	    ),
+
+	    'admin'=>array(
+	        'username'=>'admin',
+	        'password'=>'admin',
+	        'registerModels'=>array(
+	            //'application.models.Blog', // one model
+	            'application.models.*', // all models in folder
+	        ),
+	        'uploadCreate'=>true, // create upload folder automatically
+	        'redactorUpload'=>true, // enable Redactor image upload
+	    ),
 	),
 
 	// application components

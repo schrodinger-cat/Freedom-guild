@@ -106,4 +106,15 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+
+	/**
+	 * генерируем ростер
+	 */
+	public function actionRoster() {
+		$gi = new GuildMembers;
+		$gi = $gi->findAll(array('order'=>'rank'));
+
+		$this->render('roster', array('gi'=>$gi));
+	}
 }

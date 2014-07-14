@@ -31,11 +31,9 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
-	<?php echo time(); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->textField($model,'date', array('value'=>time())); ?>		
 		<?php echo $form->error($model,'date'); ?>
 	</div>
 

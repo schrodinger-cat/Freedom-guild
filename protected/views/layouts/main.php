@@ -1,59 +1,55 @@
-<?php /* @var $this Controller */ ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
+		<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+		<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-</head>
+		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	</head>
 
-<body>
+	<body>
+		
+		<div class="header container">
+			<div class="guild-rank">
+				Ранг гильдии:<br>
+				рилм - 14<br>
+				eu - 459<br>
+				мир - 809
+			</div>
 
-<div class="container" id="page">
+			<div class="guild-name">
+				Freedom-guild<span>EU-Howling Fjord</span>
+			</div>
+		</div>
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+		<div class="menu container">
+			<?php
+				echo CHtml::link('Главная', array('/'));
+				echo CHtml::link('О нас', array('/site/page', 'view'=>'about'));
+				echo CHtml::link('Видео', array('/site/video'));
+				echo CHtml::link('Рекрутинг', array('/site/page', 'view'=>'recruiting'));
+				echo CHtml::link('Состав гильдии', array('/site/roster'));
+			?>
+	    
+			<!-- <a href="/">Главная</a>
+			<a href="#">О нас</a>
+			<a href="#">Видео</a>
+			<a href="#">Рекрутинг</a>
+			<a href="#">Логи</a>
+			<a href="#">Ростер</a>
+			<a href="#">Форум</a> -->
+		</div>
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+		<div class="container content">
+			<?php echo $content; ?>
+		</div>
+		
 
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
-
-</body>
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
+	</body>
 </html>

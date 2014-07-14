@@ -1,0 +1,20 @@
+<pre>
+    <?php print_r($this); ?>
+</pre>
+
+
+
+<div id="breadCrumb">   
+    <?php 
+    foreach($this->crumbs as $crumb) {
+        if(isset($crumb['url'])) {
+            echo CHtml::link($crumb['name'], $crumb['url']);
+        } else {
+            echo $crumb['name'];
+        }
+        if(next($this->crumbs)) {
+            echo $this->delimiter;
+        }
+    }
+    ?>
+</div>

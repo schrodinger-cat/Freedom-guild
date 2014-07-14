@@ -1,0 +1,48 @@
+
+.mb10 {margin-bottom: 10px;}
+.tarea-toll {height: 250px;}
+
+.warrior {color: #C69B6D;}
+.paladin {color: #F48CBA;}
+.hunter {color: #AAD372;}
+.rogue {color: #FFF468;}
+.priest {color: #F0EBE0;}
+.dk {color: #C41E3B;}
+.shaman {color: #2359FF;}
+.mage {color: #68CCEF;}
+.warlock {color: #9382C9;}
+.monk {color: #00FFBA;}
+.druid {color: #FF7C0A;}
+
+.header {
+	margin-top: 5px;
+	padding: 5px;
+	background: #fff url(/images/tabard.png) no-repeat top right;
+	background-size: 90px;
+	position: relative;
+}
+	.guild-name {
+		color: #000;
+		font-family: 'Playfair Display SC', 'serif';
+		font-size: 44px;
+		position: absolute;
+		right: 120px;
+		top: 10px;		
+	}
+		.guild-name span {
+			font-size: 24px;
+			display: block;
+			padding-top: 15px;
+		}
+
+.menu {
+	text-align: center;
+	margin-top: 10px;
+}
+	.menu a {
+		padding: 0 20px;
+	}
+
+.content {
+	margin-top: 40px;
+}
